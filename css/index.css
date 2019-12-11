@@ -1,3 +1,283 @@
-/* Use your own code or past solution for Great Idea Web Page CSS here! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* Copy and paste your work from yesterday here and start to refactor into flexbox */
+
+:root {
+  --content-width: 86%;
+  --nav-width: 70%;
+  --h1-size: 150px;
+  --half-width: 50%;
+  --third-width: 33%;
+}
+
+@media (max-width: 800px) {
+  :root {
+    --content-width: 98%;
+    --nav-width: 100%;
+  }
+
+  header {
+    flex-direction: column-reverse;
+  }
+
+  .title-section {
+    justify-content: center;
+  }
+
+  .big-image {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    --content-width: 98%;
+    --nav-width: 100%;
+    --h1-size: 100px;
+    --half-width: 100%;
+    --third-width: 100%;
+  }
+
+  header {
+    flex-direction: column-reverse;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    width: 100%;
+    border-bottom: 1px solid black;
+    text-align: center;
+  }
+
+  .title-section {
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 100px;
+  }
+
+  .big-image {
+    display: none;
+  }
+
+  .div-2, .div-3 {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+body {
+  font-size: 25px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.container {
+  width: var(--content-width);
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: var(--nav-width);
+}
+
+nav a {
+  font-size: 25px;
+  color: lightgray;
+  text-decoration: none;
+}
+
+.logo {
+  height: 75px;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  padding: 60px 0;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: var(--h1-size);
+}
+
+button {
+  border: solid 2px black;
+  border-radius: 0;
+  background-color: white;
+  height: 50px;
+  width: 300px;
+  font-size: 25px;
+}
+
+.big-image {
+  height: 700px;
+}
+
+h2 {
+  font-size: 31px;
+}
+
+.div-2, .div-3 {
+  display: flex;
+  justfy-content: space-between;
+}
+
+.div-2 > div {
+  width: var(--half-width);
+}
+
+.middle-img {
+  width: 100%;
+  margin: 60px 0;
+}
+
+.div-3 > div {
+  width: var(--third-width);
+}
+
+footer {
+  padding: 60px 0 200px;
+}
+
+footer > p {
+  text-align: center;
+}
+
+footer address {
+  margin-bottom: 150px;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.main-section > div {
+  width: 45%;
+  margin-bottom: 60px;
+  padding: 20px;
+  border: solid 2px black;
+  background-color: lightgrey;
+}
+
+.main-section button {
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.first-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-section h1 {
+  margin: 60px 0;
+}
+
+.service-footer > div {
+  display: flex;
+  margin-bottom: 150px;
+}
+
+.service-footer > div * {
+  width: 50%;
+}
+
+.service-footer > div p {
+  width: 100%;
+}
+
+.service-footer > div ul {
+  width: 100%;
+  display: list-item;
+  list-style-type: disc;
+}
